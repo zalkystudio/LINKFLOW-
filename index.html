@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0a">
+  <title>LINKFLOW — Direct Link Resolver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="/">LINK<span>FLOW</span></a>
+      <div class="status"><i></i> SYSTEM ONLINE</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">PUBLIC REDIRECT RESOLVER</div>
+      <h1>One link.<br><span>Direct destination.</span></h1>
+      <p>Masukkan URL publik untuk memeriksa tujuan akhir redirect secara otomatis.</p>
+
+      <form id="resolveForm" class="resolver">
+        <label for="urlInput">PASTE YOUR LINK</label>
+        <div class="input-row">
+          <input
+            id="urlInput"
+            type="url"
+            placeholder="https://example.com/redirect..."
+            required
+          >
+          <button id="resolveButton" type="submit">RESOLVE ↗</button>
+        </div>
+      </form>
+
+      <div id="result" class="result hidden">
+        <div class="result-heading">RESOLUTION RESULT</div>
+        <div id="resultStatus" class="result-status"></div>
+        <div class="result-label">FINAL DESTINATION</div>
+        <div class="result-url-row">
+          <a id="finalUrl" href="#" target="_blank" rel="noopener noreferrer"></a>
+          <button id="copyButton" type="button">COPY</button>
+        </div>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <section class="history-section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">RECENT ACTIVITY</div>
+          <h2>Resolution history</h2>
+        </div>
+        <button id="refreshHistory" type="button">REFRESH ↻</button>
+      </div>
+      <div id="historyList" class="history-list">
+        <p class="empty">Belum ada riwayat.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>LINKFLOW © 2026</span>
+      <span>PUBLIC HTTP / HTTPS REDIRECTS</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
